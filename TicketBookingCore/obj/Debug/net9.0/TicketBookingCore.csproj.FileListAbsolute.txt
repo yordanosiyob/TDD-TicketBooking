@@ -1,0 +1,11 @@
+/Users/dawit/TicketBooking/TicketBookingCore/bin/Debug/net9.0/TicketBookingCore.deps.json
+/Users/dawit/TicketBooking/TicketBookingCore/bin/Debug/net9.0/TicketBookingCore.dll
+/Users/dawit/TicketBooking/TicketBookingCore/bin/Debug/net9.0/TicketBookingCore.pdb
+/Users/dawit/TicketBooking/TicketBookingCore/obj/Debug/net9.0/TicketBookingCore.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dawit/TicketBooking/TicketBookingCore/obj/Debug/net9.0/TicketBookingCore.AssemblyInfoInputs.cache
+/Users/dawit/TicketBooking/TicketBookingCore/obj/Debug/net9.0/TicketBookingCore.AssemblyInfo.cs
+/Users/dawit/TicketBooking/TicketBookingCore/obj/Debug/net9.0/TicketBookingCore.csproj.CoreCompileInputs.cache
+/Users/dawit/TicketBooking/TicketBookingCore/obj/Debug/net9.0/TicketBookingCore.dll
+/Users/dawit/TicketBooking/TicketBookingCore/obj/Debug/net9.0/refint/TicketBookingCore.dll
+/Users/dawit/TicketBooking/TicketBookingCore/obj/Debug/net9.0/TicketBookingCore.pdb
+/Users/dawit/TicketBooking/TicketBookingCore/obj/Debug/net9.0/ref/TicketBookingCore.dll
