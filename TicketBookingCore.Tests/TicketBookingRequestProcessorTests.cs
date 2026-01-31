@@ -1,20 +1,26 @@
-﻿[Fact]
-public void ShouldSaveToDatabase()
+﻿using Xunit;
+
+public class TicketBookingRequestProcessorTests
 {
-    // Arrange: skapa ett testobjekt med namn och email
-    var request = new TicketBookingRequest
+    [Fact]
+    public void ShouldSaveToDatabase()
     {
-        FirstName = "Nevena",
-        LastName = "Kicanovic",
-        Email = "nevena@gmail.com"
-    };
+        // Arrange
+        var request = new TicketBookingRequest
+        {
+            FirstName = "Nevena",
+            LastName = "Kicanovic",
+            Email = "nevena@gmail.com"
+        };
 
-    // RED-fasen: processorn är inte klar, testet ska misslyckas
-    var processor = new TicketBookingRequestProcessor(null);
+        // RED: Vi skickar null till processorn, testet ska faila
+        var processor = new TicketBookingRequestProcessor(null);
 
-    // Act: kör Book-metoden
-    var response = processor.Book(request);
+        // Act
+        var response = processor.Book(request);
 
-    // Assert: kontrollera att namnet stämmer
-    Assert.Equal(request.FirstName, response.FirstName);
+        // Assert
+        Assert.Equal(request.FirstName, response.FirstName);
+    }
 }
+

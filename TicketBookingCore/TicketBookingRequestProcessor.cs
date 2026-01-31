@@ -1,32 +1,17 @@
-namespace TicketBookingCore
+public class TicketBookingRequestProcessor
 {
-    public class TicketBookingRequestProcessor
+    private ITicketBookingRepository _repository;
+
+    public TicketBookingRequestProcessor(ITicketBookingRepository repository)
     {
-        private readonly ITicketBookingRepository _ticketBookingRepository;
+        _repository = repository;
+    }
 
-        public TicketBookingRequestProcessor(ITicketBookingRepository ticketBookingRepository)
-        {
-            _ticketBookingRepository = ticketBookingRepository;
-        }
-
-        public TicketBookingResponse Book(TicketBookingRequest request)
-        {
-            if (request is null)
-                throw new ArgumentNullException(nameof(request));
-
-            _ticketBookingRepository.Save(Create<TicketBooking>(request));
-
-            return Create<TicketBookingResponse>(request);
-        }
-
-        private static T Create<T>(TicketBookingRequest request) where T : TicketBookingBase, new()
-        {
-            return new T
-            {
-                FirstName = request.FirstName,
-                LastName = request.LastName,
-                Email = request.Email
-            };
-        }
+    public TicketBookingRequest Book(TicketBookingRequest request)
+    {
+        // RED-fasen: returnerar null så testet failar
+        return null;
     }
 }
+
+

@@ -1,10 +1,4 @@
-namespace TicketBookingCore
+public interface ITicketBookingRepository
 {
-    public class TicketBookingRepository : ITicketBookingRepository
-    {
-        public void Save(TicketBooking ticket)
-        {
-            // Här kan du lägga kod för riktig databas, men för test räcker tomt
-        }
-    }
+    // Inget innehåll behövs nu, bara nu så att typen finns
 }
