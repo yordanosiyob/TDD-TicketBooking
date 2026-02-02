@@ -1,6 +1,6 @@
 public class TicketBookingRequestProcessor
 {
-    private ITicketBookingRepository _repository;
+    private readonly ITicketBookingRepository _repository;
 
     public TicketBookingRequestProcessor(ITicketBookingRepository repository)
     {
@@ -9,9 +9,13 @@ public class TicketBookingRequestProcessor
 
     public TicketBookingRequest Book(TicketBookingRequest request)
     {
-        // RED-fasen: returnerar null så testet failar
-        return null;
+        // GREEN: minsta möjliga för att testet ska fungera
+        if (_repository != null)
+        {
+            _repository.Save(request);
+        }
+
+        return request;
     }
 }
-
 
