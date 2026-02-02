@@ -1,21 +1,45 @@
-public class TicketBookingRequestProcessor
+using System;
+
+namespace TicketBookingCore
 {
-    private readonly ITicketBookingRepository _repository;
-
-    public TicketBookingRequestProcessor(ITicketBookingRepository repository)
+    // Processor som hanterar bokningsförfrågningar
+    public class TicketBookingRequestProcessor
     {
-        _repository = repository;
-    }
+        // Repository används för att spara bokningen
+        private readonly ITicketBookingRepository _repository;
 
-    public TicketBookingRequest Book(TicketBookingRequest request)
-    {
-        // GREEN: minsta möjliga för att testet ska fungera
-        if (_repository != null)
+        // Repository skickas in via konstruktor för att kunna mockas i tester
+        public TicketBookingRequestProcessor(ITicketBookingRepository repository)
         {
-            _repository.Save(request);
+            _repository = repository;
         }
 
-        return request;
+        // Tar emot en bokningsförfrågan och returnerar ett svar
+        public TicketBookingResponse Book(TicketBookingRequest request)
+        {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+
+            // Skapar ett TicketBooking-objekt från request
+            var booking = new TicketBooking
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Email = request.Email
+            };
+
+            // Sparar bokningen i repository
+            _repository.Save(booking);
+
+            // Returnerar ett svar med samma information
+            return new TicketBookingResponse
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Email = request.Email
+            };
+        }
     }
 }
+
 
