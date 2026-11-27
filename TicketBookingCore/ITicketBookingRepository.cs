@@ -1,4 +1,7 @@
-public interface ITicketBookingRepository
+namespace TicketBookingCore
 {
-    void Save(TicketBookingRequest request);
+    public interface ITicketBookingRepository
+    {
+        void Save(TicketBooking booking);
+    }
 }
